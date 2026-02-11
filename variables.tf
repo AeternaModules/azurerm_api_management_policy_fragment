@@ -15,7 +15,7 @@ EOT
     name              = string
     value             = string
     description       = optional(string)
-    format            = optional(string, "xml")
+    format            = optional(string) # Default: "xml"
   }))
 }
 
