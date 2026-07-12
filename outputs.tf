@@ -1,3 +1,7 @@
+output "api_management_policy_fragments_id" {
+  description = "Map of id values across all api_management_policy_fragments, keyed the same as var.api_management_policy_fragments"
+  value       = { for k, v in azurerm_api_management_policy_fragment.api_management_policy_fragments : k => v.id }
+}
 output "api_management_policy_fragments_api_management_id" {
   description = "Map of api_management_id values across all api_management_policy_fragments, keyed the same as var.api_management_policy_fragments"
   value       = { for k, v in azurerm_api_management_policy_fragment.api_management_policy_fragments : k => v.api_management_id }
