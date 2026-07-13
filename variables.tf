@@ -15,7 +15,7 @@ EOT
     name              = string
     value             = string
     description       = optional(string)
-    format            = optional(string) # Default: "xml"
+    format            = optional(string)
   }))
   # --- Unconfirmed validation candidates, derived from azurerm_api_management_policy_fragment's provider source ---
   # Not auto-enabled: either a bespoke provider validator we can't safely translate,
@@ -23,6 +23,10 @@ EOT
   # Review, translate into a real validation{} block above, and delete once confirmed.
   # path: name
   #   source:    [from validate.ApiManagementChildName] !matched
+  # path: api_management_id
+  #   source:    [from validationFunctionForResourceID] !ok
+  # path: api_management_id
+  #   source:    [from validationFunctionForResourceID] err != nil
   # path: format
   #   source:    validation.StringInSlice value list is not a literal []string - likely a generated PossibleValuesFor*() helper; resolve separately
 }
